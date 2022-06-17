@@ -1,6 +1,8 @@
 <h2>Adicionar Tarefas</h2>
-<label>Nome da Tarefa</label>
+<label>Nome da Tarefa </label>
+<br>
 <input type="text" id="tarefa" #tarefa />
+<br><br>
 <button (click)="this.listaTasks.addTask(tarefa.value); tarefa.value = ''">
   Adicionar
 </button>
