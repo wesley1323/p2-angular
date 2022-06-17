@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 interface Task {
-  Nome: string;
+  nome: string;
 }
 @Injectable()
 export class WesleyTasksService {
@@ -9,13 +9,13 @@ export class WesleyTasksService {
     if (localStorage.getItem('tarefas')) {
       this.listaTask = JSON.parse(localStorage.getItem('tarefas'));
     } else {
-      localStorage.setitem('tarefas', JSON.stringify([]));
+      localStorage.setItem('tarefas', JSON.stringify([]));
     }
   }
   addTask(nome: string) {
     if (nome !== '') {
       this.listaTask.push({ nome: nome });
-      localStorage.setitem('tarefas', JSON.stringify(this.listaTask));
+      localStorage.setItem('tarefas', JSON.stringify(this.listaTask));
     }
   }
 
@@ -30,5 +30,6 @@ export class WesleyTasksService {
     if (this.listaTask != null) {
       this.listaTask = JSON.parse(localStorage.getItem('tarefas'));
     }
+    return this.listaTask;
   }
 }

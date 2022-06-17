@@ -7,8 +7,9 @@ import { HelloComponent } from './hello.component';
 import { WesleyHomeComponent } from './wesley-home/wesley-home.component';
 import { WesleyTasksComponent } from './wesley-tasks/wesley-tasks.component';
 import { WesleyTasksService } from './wesley-tasks.service';
-import { RouterModule } from '@angular/router';
+
 import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
