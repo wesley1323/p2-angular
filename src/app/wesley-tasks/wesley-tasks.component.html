@@ -1,9 +1,15 @@
 <h2>Adicionar Tarefas</h2>
 <label>Nome da Tarefa</label>
-<input type="text" id="tarefa" />
+<input type="text" id="tarefa" #tarefa />
+<button (click)="this.listaTasks.addTask(tarefa.value); tarefa.value = ''">
+  Adicionar
+</button>
 
 <hr />
 <h2>Tarefas Cadastradas</h2>
-<ul>
-  <li>Tarefa X</li>
+<ul *ngFor="let task of this.listaTasks.getTasks(); index as i">
+  <li>
+    {{ i + 1 }} {{ task.nome }}
+    <button (click)="this.listaTasks.removeTask(i)">X</button>
+  </li>
 </ul>
